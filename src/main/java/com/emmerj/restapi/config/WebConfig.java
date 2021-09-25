@@ -1,4 +1,4 @@
-package com.emmerje.restapi.config;
+package com.emmerj.restapi.config;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "com.emerje.restapi")
+@ComponentScan("com.emmerj")
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
