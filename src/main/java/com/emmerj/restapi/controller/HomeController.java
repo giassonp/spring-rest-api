@@ -13,13 +13,15 @@ public class HomeController {
 
     private GameService gameService;
 
+    public HomeController(){};
+
     @Autowired
     public HomeController(GameService gameService){
         this.gameService = gameService;
     }
 
     @GetMapping(value = "/games")
-    public List<Game> getItinerary(){
+    public List<Game> getAllGames(){
         return gameService.getAllGames();
     }
 }
