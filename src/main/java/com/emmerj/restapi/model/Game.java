@@ -8,8 +8,8 @@ import java.util.Date;
 public class Game {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    private int id;
 
     private String title;
 
