@@ -80,7 +80,14 @@
             <artifactId>spring-data-jpa-rsql</artifactId>
             <version>0.0.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.24</version>
+        </dependency>
     </dependencies>
+
 
     <build>
         <finalName>SpringRestApi</finalName>
@@ -106,7 +113,7 @@
                     <version>2.2</version>
                     <configuration>
                         <path>/</path>
-                        <port>8888</port>
+                        <port>8080</port>
                     </configuration>
                 </plugin>
             </plugins>
