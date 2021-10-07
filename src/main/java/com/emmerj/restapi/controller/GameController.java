@@ -2,11 +2,7 @@ package com.emmerj.restapi.controller;
 
 import com.emmerj.restapi.model.Game;
 import com.emmerj.restapi.service.GameService;
-import com.mathianasj.spring.rsql.CustomRsqlVisitor;
-import cz.jirutka.rsql.parser.RSQLParser;
-import cz.jirutka.rsql.parser.ast.Node;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,8 +21,8 @@ public class GameController {
     }
 
     @GetMapping()
-    public List<Game> getAllGames(@RequestParam(value = "search", required = false) String search){
-        return search != null ? gameService.getAllGames(getGameSpecification(search)) : gameService.getAllGames(null);
+    public List<Game> getAllGames(@RequestParam(value = "title", required = false) String title){
+        return gameService.getAllGames(title);
     }
 
     @GetMapping(value = "/{id}")
@@ -57,11 +53,5 @@ public class GameController {
     @PutMapping
     public void addGame(@RequestBody Game game){
         gameService.addGame(game);
-    }
-
-    private Specification<Game> getGameSpecification(String search) {
-        Node rootNode = new RSQLParser().parse(search);
-        Specification<Game> spec = rootNode.accept(new CustomRsqlVisitor<Game>());
-        return spec;
     }
 }
