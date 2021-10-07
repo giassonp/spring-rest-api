@@ -28,11 +28,8 @@ public class GameServiceImpl implements GameService {
         this.gameRepository = gameRepository;
     }
 
-    // TODO : Finish search through Specification or use another search implementation
-
     @Override
     public List<Game> getAllGames(String title) {
-
         return StringUtils.isNotBlank(title) ? gameRepository.findAll(titleLike(title)) : gameRepository.findAll();
     }
 
