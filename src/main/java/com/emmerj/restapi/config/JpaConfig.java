@@ -24,7 +24,7 @@ public class JpaConfig {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         var entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource());
+        entityManagerFactoryBean.setDataSource(dataSourcePatate());
         entityManagerFactoryBean.setPackagesToScan(new String[] { "com.emmerj.restapi.model" });
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -35,7 +35,7 @@ public class JpaConfig {
     }
 
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSourcePatate(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
