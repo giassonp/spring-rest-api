@@ -51,7 +51,7 @@ public class GameController {
     }
 
     @PutMapping
-    public void addGame(@RequestBody Game game){
-        gameService.addGame(game);
+    public Game addGame(@RequestBody Game game){
+        return gameService.addGame(game);
     }
 }

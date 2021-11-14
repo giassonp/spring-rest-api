@@ -44,8 +44,8 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public void addGame(Game game) {
-        gameRepository.save(game);
+    public Game addGame(Game game) {
+        return gameRepository.save(game);
     }
 
     // Filtering with custom repository query

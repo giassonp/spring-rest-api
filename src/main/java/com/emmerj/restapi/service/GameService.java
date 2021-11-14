@@ -17,5 +17,5 @@ public interface GameService {
 
     void deleteGameById(Integer id);
 
-    void addGame(Game game);
+    Game addGame(Game game);
 }
